@@ -51,7 +51,7 @@ class DebugToolsPlugin : Plugin<Project> {
       val hasKotlinJvm = project.plugins.hasPlugin("org.jetbrains.kotlin.jvm")
       if (hasKotlinJvm) {
         val sourceSets = project.extensions
-        .getByName("sourceSets") as org.gradle.api.tasks.SourceSetContainer
+          .getByName("sourceSets") as org.gradle.api.tasks.SourceSetContainer
         val cp = sourceSets.getByName("main").runtimeClasspath.asPath
 
         project.tasks.register("debugWithJdb", DebugWithJdbTask::class.java).configure {
